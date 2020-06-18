@@ -1,6 +1,3 @@
-// let currentDay = moment().format("MMM Do YY");               // Jun 17th 20
-// let currentTime = moment().format('LTS');  //Current Time
-
 var update = function () {
     document.getElementById("currentDay")
         .innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -8,5 +5,12 @@ var update = function () {
 setInterval(update, 1000);
 
 $(document).ready(function () {
+    //check the time change colors of rows
+})
 
+$(".saveBtn").on("click", function () {
+    //get value then save in row
+
+    let userChoice = $(this).val();
+    console.log("User Clicked Button: " + userChoice);
 })
