@@ -6,11 +6,9 @@ setInterval(update, 1000);
 
 $(document).ready(function () {
     //check the time change colors of rows
+    $("#button9").click(function () {
+        let userInput = $("#input9").val();
+        console.log(userInput);
+    })
 })
 
-$(".saveBtn").on("click", function () {
-    //get value then save in row
-
-    let userChoice = $(this).val();
-    console.log("User Clicked Button: " + userChoice);
-})
