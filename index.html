@@ -83,24 +83,6 @@
       <div class="col-sm-1 far fa-save saveBtn" value="5"></div>
     </div>
 
-    <div class="row" id="19">
-      <div class="col-sm-2 hour">7PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea" rows="3" type="text" name="5PM" value="5"></textarea>
-      <div class="col-sm-1 far fa-save saveBtn" value="5"></div>
-    </div>
-
-    <div class="row" id="20">
-      <div class="col-sm-2 hour">8PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea" rows="3" type="text" name="5PM" value="5"></textarea>
-      <div class="col-sm-1 far fa-save saveBtn" value="5"></div>
-    </div>
-
-    <div class="row" id="21">
-      <div class="col-sm-2 hour">9PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea" rows="3" type="text" name="5PM" value="5"></textarea>
-      <div class="col-sm-1 far fa-save saveBtn" value="5"></div>
-    </div>
-
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -146,16 +128,23 @@
     });
 
     //Save Button
-    //Local Storage Needs Work
-    $(".saveBtn").on("click", function () {
-      let userChoiceHour = $(this).attr("value");
+    $(".saveBtn").on("click", function (event) {
 
-      userChoiceHour = parseInt(userChoiceHour);
-      console.log("UserChoice: " + userChoiceHour);
+      //get input from #textArea
+      //let userInput = $(this).val();
+
+
+      //get local storage
+      //set local storage
+
+      // console.log("Saved Item: " + JSON.stringify(userInput));
+
     });
 
+    //Need more explantaion on -> this, call back functions, event bubbling, JSON stringfy/parse
 
   </script>
 </body>
+
 
 </html>
