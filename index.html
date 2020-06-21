@@ -25,49 +25,49 @@
 
     <div class="row" id="9">
       <div class="col-sm-2 hour" value="9">9AM</div>
-      <textarea class="col-sm-8 textInput" id="textArea9" rows="3" type="text" name="9AM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea9" rows="3" type="text" name="9AM" value="9"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" id="9AM" value="9"></div>
     </div>
 
     <div class="row" id="10">
       <div class="col-sm-2 hour">10AM</div>
-      <textarea class="col-sm-8 textInput" id="textArea10" rows="3" type="text" name="10AM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea10" rows="3" type="text" name="10AM" value="10"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" id="10AM" value="10"></div>
     </div>
 
     <div class="row" id="11">
       <div class="col-sm-2 hour">11AM</div>
-      <textarea class="col-sm-8 textInput" id="textArea11" rows="3" type="text" name="11AM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea11" rows="3" type="text" name="11AM" value="11"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" id="11AM" value="11"></div>
     </div>
 
     <div class="row" id="12">
       <div class="col-sm-2 hour">12PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea12" rows="3" type="text" name="12PM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea12" rows="3" type="text" name="12PM" value="12"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" id="12PM" value="12"></div>
     </div>
 
     <div class="row" id="1">
       <div class="col-sm-2 hour">1PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea1" rows="3" type="text" name="1PM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea1" rows="3" type="text" name="1PM" value="1"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" id="1PM" value="1"></div>
     </div>
 
     <div class="row" id="2">
       <div class="col-sm-2 hour">2PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea2" rows="3" type="text" name="2PM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea2" rows="3" type="text" name="2PM" value="2"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" id="2PM" value="2"></div>
     </div>
 
     <div class="row" id="3">
       <div class="col-sm-2 hour">3PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea3" rows="3" type="text" name="3PM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea3" rows="3" type="text" name="3PM" value="3"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" value="3"></div>
     </div>
 
     <div class="row" id="4">
       <div class="col-sm-2 hour">4PM</div>
-      <textarea class="col-sm-8 textInput" id="textArea4" rows="3" type="text" name="4PM"></textarea>
+      <textarea class="col-sm-8 textInput" id="textArea4" rows="3" type="text" name="4PM" value="4"></textarea>
       <div class="col-sm-1 far fa-save saveBtn" value="4"></div>
     </div>
 
@@ -82,6 +82,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script>
+
     var update = function () {
       document.getElementById("currentDay").innerHTML = moment().format(
         "MMMM Do YYYY, h:mm:ss a"
@@ -94,15 +95,36 @@
       let currentTime = moment().hour();
       console.log("CurrentTime: " + currentTime);
 
+      const hour = [9, 10, 11, 12, 1, 2, 3, 4, 5]
 
-      const textAreaFill = $("#textArea");
+      for (let x = 0; x < hour.length; x++) {
+        let divHour = document.getElementById(hour[x]);
 
+        if (divHour < currentTime) {
+          console.log("Past");
+          $(divHour).addClass("past");
+        }
+
+        if (divHour > currentTime) {
+          console.log("Future");
+          $(divHour).addClass("past");
+
+        }
+        else {
+          console.log("Present");
+          $(divHour).addClass("past");
+
+        }
+
+
+      }
 
     });
 
     //Save Button
     $(".saveBtn").on("click", function () {
-      let userChoiceHour = ($(this).attr("value"));
+      let userChoiceHour = $(this).attr("value");
+
       userChoiceHour = parseInt(userChoiceHour);
       console.log("UserChoice: " + userChoiceHour);
     });
