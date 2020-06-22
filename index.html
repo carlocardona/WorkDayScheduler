@@ -90,7 +90,7 @@
     <div class="row" id="17">
       <div class="col-sm-2 hour">5PM</div>
       <textarea class="col-sm-8 textInput" id="textArea5" rows="3" type="text" name="5PM"></textarea>
-      <div class="col-sm-1" value="5">
+      <div class="col-sm-2" value="5">
         <button class="saveBtn fa-save far" id="5"></button>
       </div>
 
@@ -137,6 +137,7 @@
 
       }
 
+      // To get what is in localStorage and put in TextArea
       for (let x = 0; x < hourShown.length; x++) {
 
         let textAreaValue = localStorage.getItem("id" + hourShown[x]);
@@ -147,8 +148,6 @@
           inputField.value = textAreaValue;
         }
       }
-
-
 
     });
 
