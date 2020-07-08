@@ -7,3 +7,4 @@ Colors are shown to indicate past (grey), present (red), future (green).
 
 Items placed in the textarea, then clicking the save button, will retain the data saved in local storage. 
 
+<img src = "https://github.com/carlocardona/WorkDayScheduler/blob/master/Assets/WorkDayScheduler.PNG">
