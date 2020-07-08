@@ -1,8 +1,6 @@
-# WorkDayScheduler
+# WorkDayScheduler - Assignment 5 - 
 
-Assignment #5
-
-# Description
+---
 
 Workday scheduler with hours consisting a range from 9AM to 5PM. 
 
